@@ -2,12 +2,6 @@ import numpy as np
 
 dna_dict = {'A': 0, 'G': 1, 'C': 2, 'T': 3}
 
-# sequence1 = 'GATACAGGCC'
-# sequence2 = 'CCCATATG'
-# n = 100
-# path = 'agct_matrix.csv'
-# output_path = 'SW_output.txt'
-
 def is_dna(x):
     for i in x:
         if i not in ['A', 'G', 'C', 'T']:
@@ -71,4 +65,4 @@ def SmithWaterman(n, submatrix_path, output_filename, sequence1, sequence2, GP=-
             f'Local alignment no. {i + 1}:\n{alignments[i][0]}\n{alignments[i][1]}\nScore: {alignments[i][2]}\n\n')
     f.close()
 
-# SmithWaterman(n, path, output_path, sequence1, sequence2, GP=-2)
+SmithWaterman(10, 'agct_matrix.csv', 'SW_output.txt', 'GATACAGGCC', 'CCCATATG', -1)
