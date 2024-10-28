@@ -2,12 +2,6 @@ import numpy as np
 
 dna_dict = {'A': 0, 'G': 1, 'C': 2, 'T': 3}
 
-# sequence1 = 'GATC'
-# sequence2 = 'CATTG'
-# n = 4
-# path = 'agct_matrix.csv'
-# output_path = 'NW_output.txt'
-
 def is_dna(x):
     for i in x:
         if i not in ['A', 'G', 'C', 'T']:
@@ -79,4 +73,4 @@ def NeedlemanWunsch(n, submatrix_path, output_filename, sequence1, sequence2, GP
             f'Global alignment no. {i + 1}:\n{alignments[i][0]}\n{alignments[i][1]}\nScore: {alignments[i][2]}\n\n')
     f.close()
 
-# NeedlemanWunsch(n, path, output_path, sequence1, sequence2, GP = -2)
+NeedlemanWunsch(4, 'agct_matrix.csv', 'NW_output.txt', 'GATC', 'CATTG', -3)
